@@ -4,11 +4,12 @@
  */
 package centromedico;
 
-import centromedico.arreglos.MenuArreglos;
+
 
 public class Centromedico {
     public static void main(String[] args) {
-        MenuArreglos menu = new MenuArreglos();
+        MainMenu menu = new MainMenu();
         menu.mostrarMenu();
     }
 }
+
