@@ -16,14 +16,32 @@ public class MatrizHorarios {
         matriz = new int[dias][numMedicos];
     }
 
-    // Registrar horario
+    // Registrar horario con validación
     public void asignarHorario(int dia, int medicoIndex, int valor) {
+
+        // Validación de rangos
+        if (dia < 0 || dia >= matriz.length) {
+            System.out.println("❌ Error: el día no existe (0 a " + (matriz.length - 1) + ").");
+            return;
+        }
+
+        if (medicoIndex < 0 || medicoIndex >= matriz[0].length) {
+            System.out.println("❌ Error: la posición del médico no es válida (0 a " + (matriz[0].length - 1) + ").");
+            return;
+        }
+
+        if (valor != 0 && valor != 1) {
+            System.out.println("❌ Valor inválido. Solo 0 o 1.");
+            return;
+        }
+
         matriz[dia][medicoIndex] = valor;
+        System.out.println("✔ Horario asignado correctamente.");
     }
 
-    // Mostrar matriz completa
     public void mostrarHorarios() {
-        System.out.println("=== Horarios (0 = Libre / 1 = Atiende) ===");
+        System.out.println("\n=== Horarios (0 = Libre / 1 = Atiende) ===");
+
         for (int i = 0; i < matriz.length; i++) {
             System.out.print("Día " + i + ": ");
             for (int j = 0; j < matriz[i].length; j++) {

@@ -13,8 +13,8 @@ public class MenuArreglos {
     private MatrizHorarios horarios;
 
     public MenuArreglos() {
-        registro = new RegistroMedicos(20);   // capacidad inicial
-        horarios = new MatrizHorarios(7, 20); // 7 días, hasta 20 médicos
+        registro = new RegistroMedicos(20);   // hasta 20 médicos
+        horarios = new MatrizHorarios(7, 20); // 7 días, 20 columnas
     }
 
     public void mostrarMenu() {
@@ -41,7 +41,7 @@ public class MenuArreglos {
                 case 6 -> asignarHorario();
                 case 7 -> horarios.mostrarHorarios();
                 case 8 -> System.out.println("Volviendo...");
-                default -> System.out.println("Opción inválida.");
+                default -> System.out.println("❌ Opción inválida.");
             }
 
         } while (opcion != 8);
@@ -59,15 +59,18 @@ public class MenuArreglos {
         String esp = sc.nextLine();
 
         boolean ok = registro.agregarMedico(new Medico(id, nombre, esp));
-        if (ok) System.out.println("Médico registrado.");
+
+        if (ok) System.out.println("✔ Médico registrado.");
     }
 
     private void buscarMedico() {
         System.out.print("Ingrese ID: ");
         int id = sc.nextInt();
+
         Medico m = registro.buscarPorId(id);
+
         if (m != null) System.out.println(m);
-        else System.out.println("No encontrado.");
+        else System.out.println("❌ No encontrado.");
     }
 
     private void actualizarEspecialidad() {
@@ -79,31 +82,46 @@ public class MenuArreglos {
         String esp = sc.nextLine();
 
         if (registro.actualizarEspecialidad(id, esp))
-            System.out.println("Actualizado.");
+            System.out.println("✔ Especialidad actualizada.");
         else
-            System.out.println("No encontrado.");
+            System.out.println("❌ Médico no encontrado.");
     }
 
     private void eliminarMedico() {
         System.out.print("ID: ");
         int id = sc.nextInt();
+
         if (registro.eliminar(id))
-            System.out.println("Eliminado.");
+            System.out.println("✔ Médico eliminado.");
         else
-            System.out.println("No encontrado.");
+            System.out.println("❌ Médico no encontrado.");
     }
 
     private void asignarHorario() {
+        if (registro.getContador() == 0) {
+            System.out.println("❌ No hay médicos registrados.");
+            return;
+        }
+
         System.out.print("Día (0=Lun ... 6=Dom): ");
         int dia = sc.nextInt();
 
-        System.out.print("Posición del médico (0 a contador-1): ");
+        if (dia < 0 || dia > 6) {
+            System.out.println("❌ Día inválido. Solo 0 a 6.");
+            return;
+        }
+
+        System.out.print("Posición del médico (0 a " + (registro.getContador() - 1) + "): ");
         int pos = sc.nextInt();
+
+        if (pos < 0 || pos >= registro.getContador()) {
+            System.out.println("❌ Posición inválida.");
+            return;
+        }
 
         System.out.print("Valor (0=libre, 1=atiende): ");
         int val = sc.nextInt();
 
         horarios.asignarHorario(dia, pos, val);
-        System.out.println("Horario asignado.");
     }
 }
