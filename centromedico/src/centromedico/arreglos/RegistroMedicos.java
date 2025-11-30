@@ -7,9 +7,7 @@ package centromedico.arreglos;
 import java.util.Scanner;
 
 
-/**
- * Maneja un arreglo estático de médicos.
- */
+
 public class RegistroMedicos {
 
     private Medico[] lista;
@@ -20,10 +18,10 @@ public class RegistroMedicos {
         contador = 0;
     }
 
-    // Insertar médico
+  
     public boolean agregarMedico(Medico m) {
         if (contador >= lista.length) {
-            System.out.println("No hay espacio para más médicos.");
+            System.out.println("No hay espacio para mas medicos.");
             return false;
         }
         lista[contador] = m;
@@ -31,7 +29,7 @@ public class RegistroMedicos {
         return true;
     }
 
-    // Buscar por ID
+  
     public Medico buscarPorId(int id) {
         for (int i = 0; i < contador; i++) {
             if (lista[i].getId() == id) {
@@ -41,7 +39,7 @@ public class RegistroMedicos {
         return null;
     }
 
-    // Eliminar por ID
+    
     public boolean eliminar(int id) {
         for (int i = 0; i < contador; i++) {
             if (lista[i].getId() == id) {
@@ -57,7 +55,7 @@ public class RegistroMedicos {
         return false;
     }
 
-    // Actualizar especialidad
+ 
     public boolean actualizarEspecialidad(int id, String nueva) {
         Medico m = buscarPorId(id);
         if (m != null) {
@@ -67,10 +65,10 @@ public class RegistroMedicos {
         return false;
     }
 
-    // Mostrar todos
+  
     public void mostrarMedicos() {
         if (contador == 0) {
-            System.out.println("No hay médicos registrados.");
+            System.out.println("No hay medicos registrados.");
             return;
         }
         for (int i = 0; i < contador; i++) {

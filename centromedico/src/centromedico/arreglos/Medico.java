@@ -4,9 +4,7 @@
  */
 package centromedico.arreglos;
 
-/**
- * Clase que representa a un médico dentro del centro médico.
- */
+
 public class Medico {
     private int id;
     private String nombre;
