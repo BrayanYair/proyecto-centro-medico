@@ -6,10 +6,10 @@ package centromedico;
 
 import java.util.Scanner;
 import centromedico.arreglos.MenuArreglos;
-// Cuando tus compañeros tengan sus menús, descomentas estas líneas:
+
 // import centromedico.listas.MenuListas;
-// import centromedico.cola.MenuCola;
-// import centromedico.pila.MenuPila;
+   import centromedico.cola.MenuColayPila;
+
 
 public class MainMenu {
 
@@ -43,12 +43,8 @@ public class MainMenu {
                 }
 
                 case 3 -> {
-                    System.out.println(">> Módulo de Cola/Pila no está integrado aún.");
-                    // CUANDO TU COMPAÑERO TE PASE SU CÓDIGO:
-                    // MenuCola menuC = new MenuCola();
-                    // menuC.mostrarMenu();
-                    // MenuPila menuP = new MenuPila();
-                    // menuP.mostrarMenu();
+                     MenuColayPila menuCyP = new MenuColayPila();
+                     menuCyP.mostrarMenu();
                 }
 
                 case 4 -> System.out.println("Saliendo del sistema...");
