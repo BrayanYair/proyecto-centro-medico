@@ -1,0 +1,23 @@
+# NetBeans private configs
+nbproject/private/
+
+# Build directories
+build/
+dist/
+
+# Compiled class files
+*.class
+
+# NetBeans cache
+nbproject/Makefile-impl.mk
+nbproject/Makefile-variables.mk
+
+# General Java ignores
+*.log
+*.war
+*.ear
+
+# OS files
+.DS_Store
+Thumbs.db
+
