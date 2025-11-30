@@ -4,17 +4,11 @@
  */
 package centromedico;
 
-/**
- *
- * @author Lenovo
- */
-public class Centromedico {
+import centromedico.arreglos.MenuArreglos;
 
-    /**
-     * @param args the command line arguments
-     */
+public class Centromedico {
     public static void main(String[] args) {
-        // TODO code application logic here
+        MenuArreglos menu = new MenuArreglos();
+        menu.mostrarMenu();
     }
-    
 }
