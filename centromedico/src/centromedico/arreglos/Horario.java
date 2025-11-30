@@ -4,11 +4,9 @@
  */
 package centromedico.arreglos;
 
-/**
- * Representa un horario asignado a un médico.
- */
+
 public class Horario {
-    private int dia;   // 0 = Lunes ... 6 = Domingo
+    private int dia; 
     private int medicoId;
 
     public Horario(int dia, int medicoId) {

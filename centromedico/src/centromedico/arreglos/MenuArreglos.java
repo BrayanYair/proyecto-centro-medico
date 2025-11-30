@@ -13,23 +13,23 @@ public class MenuArreglos {
     private MatrizHorarios horarios;
 
     public MenuArreglos() {
-        registro = new RegistroMedicos(20);   // hasta 20 médicos
-        horarios = new MatrizHorarios(7, 20); // 7 días, 20 columnas
+        registro = new RegistroMedicos(20);  
+        horarios = new MatrizHorarios(7, 20); 
     }
 
-    public void mostrarMenu() {
-        int opcion;
+   public void mostrarMenu() {
+    int opcion;
         do {
-            System.out.println("\n====== MENÚ - GESTIÓN DE MÉDICOS ======");
-            System.out.println("1. Registrar médico");
-            System.out.println("2. Mostrar médicos");
-            System.out.println("3. Buscar médico");
+            System.out.println("\n====== MENU - GESTION DE MEDICOS ======");
+            System.out.println("1. Registrar medico");
+            System.out.println("2. Mostrar medicos");
+            System.out.println("3. Buscar medico");
             System.out.println("4. Actualizar especialidad");
-            System.out.println("5. Eliminar médico");
+            System.out.println("5. Eliminar medico");
             System.out.println("6. Asignar horario");
             System.out.println("7. Mostrar horarios");
             System.out.println("8. Volver");
-            System.out.print("Opción: ");
+            System.out.print("Opcion: ");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -41,11 +41,12 @@ public class MenuArreglos {
                 case 6 -> asignarHorario();
                 case 7 -> horarios.mostrarHorarios();
                 case 8 -> System.out.println("Volviendo...");
-                default -> System.out.println("❌ Opción inválida.");
+                default -> System.out.println("Opcion invalida.");
             }
 
         } while (opcion != 8);
     }
+
 
     private void registrarMedico() {
         System.out.print("ID del médico: ");
@@ -60,7 +61,7 @@ public class MenuArreglos {
 
         boolean ok = registro.agregarMedico(new Medico(id, nombre, esp));
 
-        if (ok) System.out.println("✔ Médico registrado.");
+        if (ok) System.out.println("Médico registrado.");
     }
 
     private void buscarMedico() {
@@ -70,7 +71,7 @@ public class MenuArreglos {
         Medico m = registro.buscarPorId(id);
 
         if (m != null) System.out.println(m);
-        else System.out.println("❌ No encontrado.");
+        else System.out.println("No encontrado.");
     }
 
     private void actualizarEspecialidad() {
@@ -82,9 +83,9 @@ public class MenuArreglos {
         String esp = sc.nextLine();
 
         if (registro.actualizarEspecialidad(id, esp))
-            System.out.println("✔ Especialidad actualizada.");
+            System.out.println("Especialidad actualizada.");
         else
-            System.out.println("❌ Médico no encontrado.");
+            System.out.println("Médico no encontrado.");
     }
 
     private void eliminarMedico() {
@@ -92,14 +93,14 @@ public class MenuArreglos {
         int id = sc.nextInt();
 
         if (registro.eliminar(id))
-            System.out.println("✔ Médico eliminado.");
+            System.out.println("Médico eliminado.");
         else
-            System.out.println("❌ Médico no encontrado.");
+            System.out.println("Médico no encontrado.");
     }
 
     private void asignarHorario() {
         if (registro.getContador() == 0) {
-            System.out.println("❌ No hay médicos registrados.");
+            System.out.println("No hay médicos registrados.");
             return;
         }
 
@@ -107,7 +108,7 @@ public class MenuArreglos {
         int dia = sc.nextInt();
 
         if (dia < 0 || dia > 6) {
-            System.out.println("❌ Día inválido. Solo 0 a 6.");
+            System.out.println("Día inválido. Solo 0 a 6.");
             return;
         }
 
@@ -115,7 +116,7 @@ public class MenuArreglos {
         int pos = sc.nextInt();
 
         if (pos < 0 || pos >= registro.getContador()) {
-            System.out.println("❌ Posición inválida.");
+            System.out.println("Posición inválida.");
             return;
         }
 

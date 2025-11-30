@@ -18,14 +18,13 @@ public class MainMenu {
     public void mostrarMenu() {
 
         int opcion;
-
         do {
-            System.out.println("\n========== MENÚ PRINCIPAL ==========");
-            System.out.println("1. Gestión de Médicos (Arreglos y Matriz)");
+            System.out.println("\n========== MENU PRINCIPAL ==========");
+            System.out.println("1. Gestion de Médicos (Arreglos y Matriz)");
             System.out.println("2. Pacientes Atendidos (Lista Enlazada)");
-            System.out.println("3. Atención de Pacientes (Cola y Pila)");
+            System.out.println("3. Atencion de Pacientes (Cola y Pila)");
             System.out.println("4. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
             opcion = sc.nextInt();
 
             switch (opcion) {
@@ -37,7 +36,6 @@ public class MainMenu {
 
                 case 2 -> {
                     System.out.println(">> Módulo de Listas no está integrado aún.");
-                    // CUANDO TU COMPAÑERO TE PASE SU CÓDIGO:
                     // MenuListas menuL = new MenuListas();
                     // menuL.mostrarMenu();
                 }
@@ -49,7 +47,7 @@ public class MainMenu {
 
                 case 4 -> System.out.println("Saliendo del sistema...");
 
-                default -> System.out.println("❌ Opción no válida.");
+                default -> System.out.println("Opción no válida.");
             }
 
         } while (opcion != 4);

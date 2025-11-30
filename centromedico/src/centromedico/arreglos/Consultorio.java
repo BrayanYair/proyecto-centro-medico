@@ -4,14 +4,7 @@
  */
 package centromedico.arreglos;
 
-/**
- *
- * @author Lenovo
-package centromedico.arreglos;
 
-/**
- * Clase simple que representa un consultorio médico.
- */
 public class Consultorio {
     private int numero;
     private String descripcion;
