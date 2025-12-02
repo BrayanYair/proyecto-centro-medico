@@ -1,5 +1,7 @@
 # NetBeans private configs
 nbproject/private/
+centromedico/nbproject/private/
+centromedico/nbproject/private/private.properties
 
 # Build directories
 build/
@@ -11,6 +13,8 @@ dist/
 # NetBeans cache
 nbproject/Makefile-impl.mk
 nbproject/Makefile-variables.mk
+centromedico/nbproject/Makefile-impl.mk
+centromedico/nbproject/Makefile-variables.mk
 
 # General Java ignores
 *.log
@@ -20,4 +24,3 @@ nbproject/Makefile-variables.mk
 # OS files
 .DS_Store
 Thumbs.db
-
