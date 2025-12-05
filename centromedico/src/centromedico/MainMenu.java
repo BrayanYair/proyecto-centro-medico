@@ -7,8 +7,9 @@ package centromedico;
 import java.util.Scanner;
 import centromedico.arreglos.MenuArreglos;
 
-// import centromedico.listas.MenuListas;
-   import centromedico.cola.MenuColayPila;
+
+ import centromedico.listas.MenuListas;
+ import centromedico.cola.MenuColayPila;
 
 
 public class MainMenu {
@@ -33,11 +34,11 @@ public class MainMenu {
                     MenuArreglos menuA = new MenuArreglos();
                     menuA.mostrarMenu();
                 }
+                
 
                 case 2 -> {
-                    System.out.println(">> Módulo de Listas no está integrado aún.");
-                    // MenuListas menuL = new MenuListas();
-                    // menuL.mostrarMenu();
+                   MenuListas menuL = new MenuListas();
+                   menuL.mostrarMenu();
                 }
 
                 case 3 -> {
@@ -53,3 +54,8 @@ public class MainMenu {
         } while (opcion != 4);
     }
 }
+
+
+
+       
+
